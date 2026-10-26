@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pronto — do zero ao app em minutos</title>
+    <meta name="description" content="Monte seu app em minutos: escolha uma stack open source, marque os recursos e baixe um starter kit com código, README e roadmap." />
+    <meta name="theme-color" content="#070b12" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23b6ff5c'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='40' font-weight='700' text-anchor='middle' fill='%23070b12'%3Ep%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Pronto — início">
+        <span class="brand-mark">p<span>.</span></span>
+        <span class="brand-word">pronto</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="#builder">Gerador</a>
+        <a href="#open-source">Stacks</a>
+        <a href="#how">Como funciona</a>
+      </nav>
+      <a class="btn btn-small btn-primary" href="#builder">Gerar agora</a>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="pill"><i class="live-dot"></i> 100% open source · sem cadastro</span>
+          <h1>Do zero ao app<br /><em>em minutos.</em></h1>
+          <p class="lede">
+            Escolha um preset, marque os recursos e baixe um starter kit completo:
+            código, README, roadmap e stack open source pronta para buildar.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#builder">Montar meu app <span aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="#presets">Ver presets</a>
+          </div>
+          <dl class="hero-stats">
+            <div><dt>7</dt><dd>stacks open source</dd></div>
+            <div><dt>12</dt><dd>recursos plugáveis</dd></div>
+            <div><dt>0</dt><dd>contas ou cartões</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="window">
+            <div class="window-bar">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="window-title">pronto.config</span>
+              <span class="window-status"><i></i> ao vivo</span>
+            </div>
+            <div class="window-body">
+              <div class="mock-head">
+                <span class="mock-logo">p.</span>
+                <div class="mock-id">
+                  <strong>Rota</strong>
+                  <small>Planejador de viagens</small>
+                </div>
+                <span class="mock-badge">React + Vite</span>
+              </div>
+              <div class="mock-stream">
+                <div class="mock-line"><span class="mock-check">✓</span> Estrutura do projeto <em>ok</em></div>
+                <div class="mock-line"><span class="mock-check">✓</span> Autenticação <em>ok</em></div>
+                <div class="mock-line"><span class="mock-check">✓</span> Banco de dados <em>ok</em></div>
+                <div class="mock-line is-active"><span class="mock-spin"></span> Roadmap de lançamento <em>agora</em></div>
+              </div>
+              <div class="mock-progress"><span></span></div>
+              <div class="mock-meta"><span>12 arquivos</span><span>MIT</span><span>~1 min</span></div>
+            </div>
+          </div>
+          <div class="float-card float-a">
+            <span class="card-kicker">EXPORT</span>
+            <strong>projeto.zip</strong>
+            <small>pronto para buildar</small>
+          </div>
+          <div class="float-card float-b">
+            <span class="card-kicker">STACK</span>
+            <strong>MIT</strong>
+            <small>licença livre</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="presets reveal" id="presets" aria-labelledby="presets-title">
+        <div class="section-head compact">
+          <div>
+            <p class="kicker">Sem tempo? Comece por aqui</p>
+            <h2 id="presets-title">Um preset, um atalho.</h2>
+          </div>
+          <p class="section-note">Clique para preencher tudo e gerar na hora.</p>
+        </div>
+        <div class="preset-grid" id="preset-grid"></div>
+      </section>
+
+      <section class="builder reveal" id="builder" aria-labelledby="builder-title">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Gerador</p>
+            <h2 id="builder-title">Monte seu app em 4 passos.</h2>
+          </div>
+          <p class="section-note">Nada é enviado para servidores. Seu projeto fica no navegador.</p>
+        </div>
+
+        <div class="builder-grid">
+          <form class="panel form-panel" id="builder-form" novalidate>
+            <fieldset class="field">
+              <legend><span class="step">01</span> Identidade</legend>
+              <div class="two-col">
+                <label class="input-label">
+                  Nome do app
+                  <input id="app-name" name="app-name" type="text" maxlength="40" placeholder="Ex.: Rota" autocomplete="off" />
+                </label>
+                <label class="input-label">
+                  Subtítulo / ideia
+                  <input id="app-description" name="app-description" type="text" maxlength="90" placeholder="Planejador de viagens colaborativo" autocomplete="off" />
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="field">
+              <legend><span class="step">02</span> Tipo de projeto</legend>
+              <div class="segmented" id="type-options" role="radiogroup" aria-label="Tipo de projeto"></div>
+            </fieldset>
+
+            <fieldset class="field">
+              <legend><span class="step">03</span> Stack open source</legend>
+              <div class="stack-grid" id="stack-grid" role="radiogroup" aria-label="Stack open source"></div>
+            </fieldset>
+
+            <fieldset class="field is-last">
+              <legend><span class="step">04</span> Recursos</legend>
+              <div class="feature-grid" id="feature-grid"></div>
+            </fieldset>
+          </form>
+
+          <aside class="panel preview-panel" aria-label="Prévia do starter kit">
+            <div class="preview-top">
+              <span class="kicker">Prévia do kit</span>
+              <span class="tag" id="preview-license">MIT</span>
+            </div>
+            <div class="preview-app">
+              <span class="preview-logo">p.</span>
+              <div>
+                <h3 id="preview-name">Seu app</h3>
+                <p id="preview-desc">Descreva sua ideia para começar.</p>
+              </div>
+            </div>
+            <div class="preview-rows">
+              <div><span>Stack</span><strong id="preview-stack">React + Vite</strong></div>
+              <div><span>Tipo</span><strong id="preview-type">Web app</strong></div>
+              <div><span>Recursos</span><strong id="preview-features">4 selecionados</strong></div>
+              <div><span>Licença</span><strong id="preview-license-row">MIT</strong></div>
+            </div>
+            <div class="preview-files">
+              <span class="kicker">Arquivos</span>
+              <ul id="preview-files"></ul>
+            </div>
+            <button class="btn btn-primary btn-block" id="generate-btn" type="button">Gerar projeto <span aria-hidden="true">→</span></button>
+            <p class="micro">Tudo local. Sem cadastro. Exporta em .zip.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="output" id="output" aria-labelledby="output-title" hidden>
+        <div class="output-head">
+          <div>
+            <p class="kicker">Seu kit está pronto</p>
+            <h2 id="output-title">Seu app</h2>
+            <p class="output-subtitle" id="output-subtitle"></p>
+          </div>
+          <div class="output-actions">
+            <button class="btn btn-ghost" id="new-btn" type="button">Novo</button>
+            <button class="btn btn-ghost" id="save-btn" type="button">Salvar projeto</button>
+            <button class="btn btn-primary" id="download-btn" type="button">Baixar .zip</button>
+          </div>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Detalhes do projeto">
+          <button role="tab" type="button" data-tab="overview" aria-selected="true">Visão geral</button>
+          <button role="tab" type="button" data-tab="files">Arquivos <span id="files-count"></span></button>
+          <button role="tab" type="button" data-tab="roadmap">Roadmap</button>
+        </div>
+
+        <div class="panel tab-panel" id="overview-panel" data-panel="overview"></div>
+        <div class="panel tab-panel" id="files-panel" data-panel="files" hidden>
+          <div class="files-layout">
+            <nav class="file-tree" id="file-tree" aria-label="Arquivos do projeto"></nav>
+            <div class="code-view">
+              <div class="code-head">
+                <span id="file-path">README.md</span>
+                <div>
+                  <button class="mini-btn" id="copy-file" type="button">Copiar</button>
+                  <button class="mini-btn" id="download-file" type="button">Baixar</button>
+                </div>
+              </div>
+              <pre><code id="file-code"></code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="panel tab-panel" id="roadmap-panel" data-panel="roadmap" hidden>
+          <div class="roadmap-head">
+            <div class="progress" aria-hidden="true"><span id="roadmap-progress-bar"></span></div>
+            <span id="roadmap-progress-text">0 de 0 concluídos</span>
+          </div>
+          <div id="roadmap-list"></div>
+        </div>
+      </section>
+
+      <section class="saved reveal" id="saved" aria-labelledby="saved-title" hidden>
+        <div class="section-head compact">
+          <div>
+            <p class="kicker">No seu navegador</p>
+            <h2 id="saved-title">Projetos salvos</h2>
+          </div>
+          <button class="btn btn-ghost btn-small" id="clear-projects" type="button">Limpar histórico</button>
+        </div>
+        <div class="saved-grid" id="saved-grid"></div>
+      </section>
+
+      <section class="open-source reveal" id="open-source" aria-labelledby="open-source-title">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Open source de verdade</p>
+            <h2 id="open-source-title">Stacks que você pode usar, estudar e vender.</h2>
+          </div>
+          <p class="section-note">Licenças permissivas. Sem lock-in. Sem pegadinha.</p>
+        </div>
+        <div class="stack-showcase" id="stack-showcase"></div>
+        <p class="license-note">
+          As licenças exibidas são as dos projetos principais. Dependências podem ter licenças próprias:
+          confira antes de distribuir.
+        </p>
+      </section>
+
+      <section class="how reveal" id="how" aria-labelledby="how-title">
+        <div class="section-head compact">
+          <div>
+            <p class="kicker">Como funciona</p>
+            <h2 id="how-title">Menos setup. Mais produto.</h2>
+          </div>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="step-num">01</span>
+            <h3>Escolha um atalho</h3>
+            <p>Use um preset ou comece do zero. O gerador já sugere uma stack open source coerente.</p>
+          </li>
+          <li>
+            <span class="step-num">02</span>
+            <h3>Marque o essencial</h3>
+            <p>Login, banco, pagamentos, offline, push. Cada recurso vira tarefa e sugestão de biblioteca.</p>
+          </li>
+          <li>
+            <span class="step-num">03</span>
+            <h3>Baixe e builda</h3>
+            <p>Receba um .zip com código inicial, README, roadmap e comandos. Sem conta, sem espera.</p>
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <span class="brand-mark">p<span>.</span></span>
+        <div><strong>pronto</strong><small>do zero ao app em minutos</small></div>
+      </div>
+      <p>Feito com vanilla HTML, CSS e JavaScript. Código aberto, dados só no seu navegador.</p>
+      <a href="#top">Voltar ao topo ↑</a>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
